@@ -7,10 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .fade-in { animation: fadeIn 1s ease-in-out; }
   </style>
 </head>
@@ -18,9 +15,21 @@
 
   <!-- Navbar -->
   <nav class="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-    <div class="container mx-auto flex justify-between items-center p-4">
+    <div class="container mx-auto flex justify-between items-center p-4 px-4 sm:px-6 lg:px-8">
       <h1 class="text-2xl font-bold text-blue-700">🏨 Milan Sweets</h1>
-      <ul class="flex space-x-6">
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="index.html" class="hover:text-yellow-500 transition">Home</a></li>
+        <li><a href="rooms.html" class="text-blue-700 font-semibold hover:text-yellow-500 transition">Rooms</a></li>
+        <li><a href="restaurant.html" class="hover:text-yellow-500 transition">Restaurant</a></li>
+        <li><a href="contact.html" class="hover:text-yellow-500 transition">Contact</a></li>
+      </ul>
+      <!-- Mobile Button -->
+      <button id="menu-btn" class="md:hidden text-2xl text-blue-700 focus:outline-none"><i class="fas fa-bars"></i></button>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+      <ul class="flex flex-col space-y-4 p-4">
         <li><a href="index.html" class="hover:text-yellow-500 transition">Home</a></li>
         <li><a href="rooms.html" class="text-blue-700 font-semibold hover:text-yellow-500 transition">Rooms</a></li>
         <li><a href="restaurant.html" class="hover:text-yellow-500 transition">Restaurant</a></li>
@@ -29,7 +38,7 @@
     </div>
   </nav>
 
-  <!-- Floating Action Buttons -->
+  <!-- Floating Buttons -->
   <div class="fixed bottom-6 right-6 flex flex-col space-y-3 z-50">
     <a href="https://wa.me/911234567890?text=Hello,%20I%20would%20like%20to%20book%20a%20room%20at%20Milan%20Sweets." target="_blank"
        class="bg-green-500 text-white p-4 rounded-full shadow-xl hover:scale-110 transform transition duration-300 flex items-center justify-center">
@@ -41,39 +50,41 @@
     </a>
   </div>
 
-  <!-- Page Header -->
-  <header class="h-64 bg-cover bg-center relative flex items-center justify-center" style="background-image: url('images/home_banner_desktop.jpg');">
-    <div class="absolute inset-0 bg-black/50"></div>
-    <h2 class="relative z-10 text-4xl md:text-5xl font-bold text-white">Our Rooms</h2>
-  </header>
+  <!-- Hero -->
+<header class="relative w-full h-[40vh] sm:h-[60vh] md:h-[80vh] bg-cover bg-center" style="background-image: url('images/home_banner_desktop.jpg');">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <h2 class="relative z-10 text-3xl sm:text-5xl md:text-6xl font-bold text-white flex justify-center items-center h-full">Our Rooms</h2>
+</header>
+
 
   <!-- Rooms Section -->
-  <section class="container mx-auto py-16 px-4">
+  <section class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
     <h3 class="text-3xl font-bold text-center mb-10 text-blue-700">Choose Your Stay</h3>
-    <div class="grid md:grid-cols-2 gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
 
       <!-- Private Room 1 -->
       <div class="bg-white shadow-lg rounded-xl overflow-hidden fade-in">
-        <img src="images/privateroom.jpg" alt="Private Room 1" class="w-full h-64 object-cover">
+        <img src="images/privateroom.jpg" alt="Private Room 1" class="w-full h-48 sm:h-64 object-cover">
         <div class="p-6">
           <h4 class="text-2xl font-semibold mb-2 text-yellow-500">Private Room 1</h4>
           <p class="mb-3">Enjoy a peaceful stay with bed, private washroom, and room service.</p>
           <p class="font-bold text-lg text-blue-700">₹1500 / Night</p>
-          <div class="mt-4 flex space-x-3">
+          <div class="mt-4 flex flex-wrap gap-3">
             <a href="https://wa.me/911234567890?text=Booking%20Request:%20Private%20Room%201" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
             <a href="mailto:hotel@email.com?subject=Booking Inquiry - Private Room 1&body=I would like to book Private Room 1" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center"><i class="fas fa-envelope mr-2"></i> Gmail</a>
           </div>
         </div>
       </div>
 
+      <!-- Other Rooms ... repeat similar structure -->
       <!-- Private Room 2 -->
       <div class="bg-white shadow-lg rounded-xl overflow-hidden fade-in">
-        <img src="images/privateroom.jpg" alt="Private Room 2" class="w-full h-64 object-cover">
+        <img src="images/privateroom.jpg" alt="Private Room 2" class="w-full h-48 sm:h-64 object-cover">
         <div class="p-6">
           <h4 class="text-2xl font-semibold mb-2 text-yellow-500">Private Room 2</h4>
           <p class="mb-3">Relax in comfort with bed, private washroom, and room service.</p>
           <p class="font-bold text-lg text-blue-700">₹1700 / Night</p>
-          <div class="mt-4 flex space-x-3">
+          <div class="mt-4 flex flex-wrap gap-3">
             <a href="https://wa.me/911234567890?text=Booking%20Request:%20Private%20Room%202" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
             <a href="mailto:hotel@email.com?subject=Booking Inquiry - Private Room 2&body=I would like to book Private Room 2" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center"><i class="fas fa-envelope mr-2"></i> Gmail</a>
           </div>
@@ -82,12 +93,12 @@
 
       <!-- Private Room 3 -->
       <div class="bg-white shadow-lg rounded-xl overflow-hidden fade-in">
-        <img src="images/privateroom.jpg" alt="Private Room 3" class="w-full h-64 object-cover">
+        <img src="images/privateroom.jpg" alt="Private Room 3" class="w-full h-48 sm:h-64 object-cover">
         <div class="p-6">
           <h4 class="text-2xl font-semibold mb-2 text-yellow-500">Private Room 3</h4>
           <p class="mb-3">Modern style with bed, private washroom, and room service.</p>
           <p class="font-bold text-lg text-blue-700">₹2000 / Night</p>
-          <div class="mt-4 flex space-x-3">
+          <div class="mt-4 flex flex-wrap gap-3">
             <a href="https://wa.me/911234567890?text=Booking%20Request:%20Private%20Room%203" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
             <a href="mailto:hotel@email.com?subject=Booking Inquiry - Private Room 3&body=I would like to book Private Room 3" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center"><i class="fas fa-envelope mr-2"></i> Gmail</a>
           </div>
@@ -96,24 +107,23 @@
 
       <!-- Dormitory -->
       <div class="bg-white shadow-lg rounded-xl overflow-hidden fade-in">
-        <img src="images/dormroom.jpg" alt="Dormitory" class="w-full h-64 object-cover">
+        <img src="images/dormroom.jpg" alt="Dormitory" class="w-full h-48 sm:h-64 object-cover">
         <div class="p-6">
           <h4 class="text-2xl font-semibold mb-2 text-yellow-500">Dormitory</h4>
           <p class="mb-3">A friendly, budget option with clean beds and shared facilities.</p>
           <p class="font-bold text-lg text-blue-700">₹500 / Bed / Night</p>
-          <div class="mt-4 flex space-x-3">
+          <div class="mt-4 flex flex-wrap gap-3">
             <a href="https://wa.me/911234567890?text=Booking%20Request:%20Dormitory" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center"><i class="fab fa-whatsapp mr-2"></i> WhatsApp</a>
             <a href="mailto:hotel@email.com?subject=Booking Inquiry - Dormitory&body=I would like to book the Dormitory" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition flex items-center"><i class="fas fa-envelope mr-2"></i> Gmail</a>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-gradient-to-r from-blue-900 to-blue-700 text-gray-200 py-10">
-    <div class="container mx-auto grid md:grid-cols-3 gap-8 px-6">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 sm:px-6 lg:px-8">
       <div>
         <h4 class="text-lg font-semibold mb-3 text-yellow-400">Milan Sweets</h4>
         <p>Luxury & Comfort in the heart of the city. Private rooms, cozy dormitory, and fine dining experience.</p>
@@ -136,5 +146,14 @@
     </div>
     <div class="text-center text-sm mt-6 border-t border-gray-600 pt-4">&copy; 2025 Milan Sweets. All Rights Reserved.</div>
   </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
